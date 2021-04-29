@@ -1,0 +1,33 @@
+function param1()
+	return "たて線", 0, 1, 0
+end 
+
+function param2()
+	return "よこ線", 0, 1, 0
+end
+
+function last( x, y, p )
+
+	local h = bs_canvas_height()
+	local w = bs_canvas_width()
+	r,g,b = bs_fore()
+	alpha = bs_opaque() * 255
+	
+	if bs_param1() == 1 then
+		for i = 0, h do
+			bs_pixel_set(x, i, r, g, b, alpha)
+		end
+	end
+	
+	if bs_param2() == 1 then
+		for i = 0, w do
+			bs_pixel_set(i, y, r, g, b, alpha)
+		end
+	end
+	
+	return 1
+end
+
+function main()
+	return 0
+end
